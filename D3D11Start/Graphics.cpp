@@ -5,6 +5,7 @@
 IDXGISwapChain *swapchain;						// the pointer to the swap chain interface
 ID3D11Device *dev;								// the pointer to our Direct3D device interface
 ID3D11DeviceContext *devcon;					// the pointer to our Direct3D device context
+ID3D11RenderTargetView *backbuffer;
 
 void InitD3D(HWND hwnd)
 {
@@ -36,4 +37,13 @@ void InitD3D(HWND hwnd)
 		&dev,
 		NULL,
 		&devcon);
+}
+
+// this is the function that cleans up Direct3D and COM
+void CleanD3D()
+{
+	// close and release all existing COM objects
+	swapchain->Release();
+	dev->Release();
+	devcon->Release();
 }

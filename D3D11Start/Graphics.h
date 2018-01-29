@@ -9,5 +9,5 @@
 void InitD3D(HWND hwnd);						// sets up and initializes Direct3D
 void CleanD3D(void);							// closes Direct3D and releases memory
 
-												// the WindowProc function prototype
+// the WindowProc function prototype
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
